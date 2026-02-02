@@ -16,9 +16,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import devencarnacion.app_amf_back.entities.User;
 import devencarnacion.app_amf_back.services.UserService;
+import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequestMapping("/api/users")
+@RequiredArgsConstructor
 public class UserController {
 
     @Autowired

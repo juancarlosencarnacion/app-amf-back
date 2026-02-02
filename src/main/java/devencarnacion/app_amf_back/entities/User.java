@@ -1,6 +1,10 @@
 package devencarnacion.app_amf_back.entities;
 
+import devencarnacion.app_amf_back.enums.Role;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -23,6 +27,12 @@ public class User {
     private String name;
 
     private String lastName;
-
+    
+    @Column(unique = true, nullable = false)
     private String email;
+
+    @Enumerated(EnumType.STRING)
+    private Role role;
+
+    private String password;
 }
